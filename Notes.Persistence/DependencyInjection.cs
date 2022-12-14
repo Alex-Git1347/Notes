@@ -14,7 +14,7 @@ namespace Notes.Persistence
             {
                 options.UseSqlite(connectionString);
             });
-            services.AddScoped<INoteDbContext>(provider => provider.GetService<NotesDbContext>());
+            services.AddScoped<INotesDbContext>(provider => provider.GetService<NotesDbContext>());
 
             return services;
         }

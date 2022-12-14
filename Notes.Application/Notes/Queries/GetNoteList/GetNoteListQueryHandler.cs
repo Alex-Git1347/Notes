@@ -14,10 +14,10 @@ namespace Notes.Application.Notes.Queries.GetNoteList
 {
     public class GetNoteListQueryHandler : IRequestHandler<GetNoteListQuery, NoteListVm>
     {
-        private readonly INoteDbContext _dbContext;
+        private readonly INotesDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetNoteListQueryHandler(INoteDbContext dbContext, IMapper mapper) => (_dbContext, _mapper) = (dbContext, mapper);
+        public GetNoteListQueryHandler(INotesDbContext dbContext, IMapper mapper) => (_dbContext, _mapper) = (dbContext, mapper);
 
         public async Task<NoteListVm> Handle(GetNoteListQuery request, CancellationToken cancellationToken)
         {

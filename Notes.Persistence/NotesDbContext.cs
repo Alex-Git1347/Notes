@@ -5,7 +5,7 @@ using Notes.Persistence.EntityTypeConfigutations;
 
 namespace Notes.Persistence
 {
-    public class NotesDbContext : DbContext, INoteDbContext
+    public class NotesDbContext : DbContext, INotesDbContext
     {
         public DbSet<Note> Notes { get; set; }
 

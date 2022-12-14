@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Notes.Application.Notes.Queries.GetNoteDetails
 {
-    public class GetNoteDetailsQueryHadler : IRequestHandler<GetNoteDetailsQuery, NoteDetailsVm>
+    public class GetNoteDetailsQueryHandler : IRequestHandler<GetNoteDetailsQuery, NoteDetailsVm>
     {
-        private readonly INoteDbContext _dbContext;
+        private readonly INotesDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetNoteDetailsQueryHadler(INoteDbContext dbContext, IMapper mapper) 
+        public GetNoteDetailsQueryHandler(INotesDbContext dbContext, IMapper mapper) 
             => (_dbContext, _mapper) = (dbContext, mapper);
 
         public async Task<NoteDetailsVm> Handle(GetNoteDetailsQuery request, CancellationToken cancellationToken)
